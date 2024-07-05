@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"; // Importing react hooks
 import api from "../../services/api"; // Importing api
+import { Link } from "react-router-dom"; // Importing Link
+import "./home.css"; // Importing css
 
 
 function Home() {
@@ -9,15 +11,15 @@ function Home() {
     async function loadFilmes() {
       const response = await api.get("movie/now_playing", {   //Espera a requisição ser feita com o método await
         params: {
-          api_key: process.env.APP_API_KEY,
+          api_key: "SUA_KEY",
           language: "pt-BR",
           page: 1,
         },
       }) // Requisição para a API
-      console.log("API Key:", process.env.APP_API_KEY); // Adicione esta linh
+     
       // console.log(response.data.results); // Exibindo os resultados no console
 
-      setFilmes(response.data.results.slice(0,10)); // Setando os filmes no estado
+      setFilmes(response.data.results.slice(0,10)); // Setando os filmes no estado de 0 a 10 itens
     }
 
 
@@ -27,10 +29,14 @@ function Home() {
   return (
     <div className="container">
       <div className="lista-filmes">
-        {filmes.map((filme) => {
+        {filmes.map((filme) => {        // Mapeando os filmes para exibir na tela
           return (
-            <article key={filme.id}>
-              <strong>{filme.title}</strong>
+            <article key={filme.id}>     {/* Key para identificar cada filme */}
+              <strong>{filme.title}</strong>    
+              <img
+                src={`https://image.tmdb.org/t/p/original${filme.poster_path}`} // Imagem do filme
+                alt={filme.title} /> 
+              <Link to={`/filme/${filme.id}`}>Acessar</Link> {/* Link para acessar a página do filme} */}
               </article>
           )
         })}
