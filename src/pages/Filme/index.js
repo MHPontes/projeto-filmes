@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import "./filme-info.css";
 import api from "../../services/api";
 
 function Filme() {
@@ -13,7 +13,7 @@ function Filme() {
       await api
         .get(`movie/${id}`, {
           params: {
-            api_key: "SUA_API_KEY",
+            api_key: process.env.REACT_APP_API_KEY,
             language: "pt-BR",
           },
         })
@@ -27,7 +27,7 @@ function Filme() {
         });
     }
 
-    loadFilme();    // Chamada da função para carregar o filme com o id passado na URL 
+    loadFilme(); // Chamada da função para carregar o filme com o id passado na URL
 
     return () => {
       console.log("Componente desmontado");
@@ -42,7 +42,8 @@ function Filme() {
     );
   }
 
-  return (    // Exibindo as informações do filme
+  return (
+    // Exibindo as informações do filme
     <div className="filme-info">
       <h1>{filme.title}</h1>
       <img
@@ -52,7 +53,17 @@ function Filme() {
 
       <h3>Sinopse</h3>
       <span>{filme.overview}</span>
+      <strong>Avaliação: {filme.vote_average} /10</strong>
 
+      <div className="area-buttons">
+        <button> Salvar </button>
+        <button> 
+          <a href={`https://www.youtube.com/results?search_query=${filme.title} Trailer`} target="_blank">
+            Trailer
+          </a>
+        </button>
+
+        </div>
     </div>
   );
 }

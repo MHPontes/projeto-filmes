@@ -12,7 +12,7 @@ function Home() {
       const response = await api.get("movie/now_playing", {
         //Espera a requisição ser feita com o método await
         params: {
-          api_key: "e2ea0c3871dd1b0416ba28b1b5c22c18",
+          api_key: process.env.REACT_APP_API_KEY,
           language: "pt-BR",
           page: 1,
         },
