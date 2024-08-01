@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./filme-info.css";
 import api from "../../services/api";
@@ -7,6 +7,7 @@ function Filme() {
   const { id } = useParams(); // Pegando o id do filme
   const [filme, setFilme] = useState([]); // Estado para armazenar o filme
   const [loading, setLoading] = useState(true); // Estado para armazenar o loading
+  const navigate = useNavigate(); // Hook para navegação
 
   useEffect(() => {
     async function loadFilme() {
@@ -23,7 +24,9 @@ function Filme() {
           setLoading(false);
         })
         .catch(() => {
-          console.log("Erro ao carregar filme");
+          console.log("Erro ao carregar filme, redirecionando para a Home");
+          navigate("/", { replace: true });    // Se ocorrer um erro, redireciona para a Home
+          return;
         });
     }
 
@@ -32,7 +35,7 @@ function Filme() {
     return () => {
       console.log("Componente desmontado");
     };
-  }, []);
+  }, [id, navigate]);
 
   if (loading) {
     return (
@@ -47,8 +50,8 @@ function Filme() {
     <div className="filme-info">
       <h1>{filme.title}</h1>
       <img
-        src={`https://image.tmdb.org/t/p/original${filme.backdrop_path}`}
-        alt={filme.title}
+        src={`https://image.tmdb.org/t/p/original${filme.backdrop_path}`}   // Imagem do filme
+        alt={filme.title}   
       />
 
       <h3>Sinopse</h3>
@@ -58,7 +61,7 @@ function Filme() {
       <div className="area-buttons">
         <button> Salvar </button>
         <button> 
-          <a href={`https://www.youtube.com/results?search_query=${filme.title} Trailer`} target="_blank">
+          <a href={`https://www.youtube.com/results?search_query=${filme.title} Trailer`} target="blank" rel="external">   {/* Link para pesquisar o trailer do filme no YouTube */}
             Trailer
           </a>
         </button>
