@@ -30,9 +30,11 @@ yarn install
 
 ## Inicie o Servidor:
 npm start
+
 ou
 
 yarn start
+
 Isso iniciará o servidor de desenvolvimento. 
 
 Acesse o projeto em seu navegador: http://localhost:3000
