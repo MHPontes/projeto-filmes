@@ -1,7 +1,8 @@
 ## React PrimeFlix - Projeto do Curso React JS Udemy
 Este projeto foi desenvolvido durante o curso React JS do zero ao avançado na prática na Udemy: 
 https://www.udemy.com/course/curso-reactjs/
- Ele simula a interface do serviço de streaming PrimeFlix.
+
+Ele simula a interface do serviço de streaming PrimeFlix.
 
 ## Funcionalidades:
 
