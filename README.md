@@ -48,4 +48,4 @@ https://mhpontes-primeflix.netlify.app/
 
 ## Observações
 Este projeto utiliza a API pública The Movie Database (TMDB). Você precisará de uma chave de API válida para usar todas as funcionalidades.
-O código fonte é fornecido como está, sem garantia de qualquer tipo.
+
