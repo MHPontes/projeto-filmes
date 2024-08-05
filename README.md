@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+## React PrimeFlix - Projeto do Curso React JS Udemy
+Este projeto foi desenvolvido durante o curso React JS do zero ao avançado na prática na Udemy: 
+https://www.udemy.com/course/curso-reactjs/
+ Ele simula a interface do serviço de streaming PrimeFlix.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Funcionalidades:
 
-## Available Scripts
+- Listagem de filmes e séries em destaque.
+- Exibição de detalhes do filme/série (sinopse, elenco, etc.).
+- Opção de salvar ou excluir filmes em uma lista de filmes no localstorage.
+- Responsividade.
+- Rodando Localmente
 
-In the project directory, you can run:
+Siga as instruções abaixo para executar o projeto na sua máquina:
 
-### `npm start`
+## Pré-requisitos:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Node.js e npm instalados. Verifique a versão com node -v e npm -v.
+Um gerenciador de pacotes como yarn ou npm.
+Passo a Passo:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instale as Dependências:
 
-### `npm test`
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ou
 
-### `npm run build`
+yarn install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Inicie o Servidor:
+npm start
+ou
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+yarn start
+Isso iniciará o servidor de desenvolvimento. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Acesse o projeto em seu navegador: http://localhost:3000
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Versão Online
+Você pode conferir o projeto funcionando online através do link abaixo:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+https://mhpontes-primeflix.netlify.app/
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Observações
+Este projeto utiliza a API pública The Movie Database (TMDB). Você precisará de uma chave de API válida para usar todas as funcionalidades.
+O código fonte é fornecido como está, sem garantia de qualquer tipo.
