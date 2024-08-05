@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./favoritos.css";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Favoritos() {
   const [filmes, setFilmes] = useState([]); // Estado para armazenar os filmes
@@ -11,20 +12,24 @@ function Favoritos() {
   }, []);
 
   function excluirFilme(id) {
-    let filtroFilmes = filmes.filter((item) => { // Filtrando os filmes para excluir o filme com o id passado
+    let filtroFilmes = filmes.filter((item) => {
+      // Filtrando os filmes para excluir o filme com o id passado
       return item.id !== id;
-    })
+    });
 
     setFilmes(filtroFilmes); // Setando os filmes no estado
     localStorage.setItem("@primeflix", JSON.stringify(filtroFilmes)); // Salvando a lista de filmes no
+    toast.success("Filme excluído com sucesso!"); // Exibindo um toast de sucesso
   }
 
   return (
     <div className="meus-filmes">
       <h1>Meus filmes</h1>
 
-        {filmes.length === 0 && <span>Você não possui nenhum filme salvo :(</span>}
-        
+      {filmes.length === 0 && (
+        <span>Você não possui nenhum filme salvo :(</span>
+      )}
+
       <ul>
         {" "}
         {/* Lista de filmes */}
